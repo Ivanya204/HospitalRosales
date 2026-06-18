@@ -35,7 +35,7 @@ medicalEquipmentController.insertMedicalEquipment = async (req, res) =>{
             maintenanceDate,
             condition,
             image: req.file.path,
-            profile_id: req.file.path,
+            profile_id: req.file.filename,
             status,
             isAvailable,
         })

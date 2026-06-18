@@ -1,5 +1,4 @@
-import medicalAppointments from "../model/medicalAppointments.js"
-import patientsModel from "../model/patients"
+import patientsModel from "../model/patients.js"
 import {v2 as cloudinary} from "cloudinary"
 
 const patientsContoller = {}
@@ -37,7 +36,7 @@ patientsContoller.updatePatients = async (req, res)=>{
             updatePatient.image = req.file.path,
             updatePatient.profile_id = req.file.filename
         }
-        await medicalAppointments.findByIdAndUpdate(req.params.id, updatePatient, {new: true})
+        await patientsModel.findByIdAndUpdate(req.params.id, updatePatient, {new: true})
         return res.status(200).json({message: "Actualizado correctamente"})
     } catch (error) {
         return res.status(500).json({message: "Intenal sever error"})

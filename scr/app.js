@@ -11,6 +11,6 @@ app.use(cors({
 
 app.use(cookieParser())
 
-app.use()
+app.use(express.json())
 
 export default app;

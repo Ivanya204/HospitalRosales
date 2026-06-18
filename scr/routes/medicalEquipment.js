@@ -1,4 +1,4 @@
-import upload from "../utils/cloudinaryConfig,js";
+import upload from "../utils/cloudinaryConfig.js";
 import express from "express";
 import medicalEquipment from "../controller/medicalEquipmentController.js";
 
