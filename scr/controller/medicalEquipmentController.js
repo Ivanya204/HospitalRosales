@@ -74,12 +74,12 @@ medicalEquipmentController.updateMedicalEquipment = async (req, res)=>{
             isAvailable,
         }
         if(req.file){
-            await cloudinary.uploader.destroy(patientFound.profile_id)
+            await cloudinary.uploader.destroy(equipmentFound.profile_id)
             
             updateEquipment.image = req.file.path,
             updateEquipment.profile_id = req.file.filename
         }
-        await equipmentFound.findByIdAndUpdate(req.params.id, updateEquipment, {new: true})
+        await medicalEquipmentModel.findByIdAndUpdate(req.params.id, updateEquipment, {new: true})
         return res.status(200).json({message: "Actualizado correctamente"})
     } catch (error) {
         return res.status(500).json({message: "Intenal sever error"})

@@ -3,7 +3,7 @@ const medicalSpecialtiesController   = {}
 
 medicalSpecialtiesController.getMedicalSpecialties = async (req, res) =>{
     try {
-        const medical = await medicalAppointmentsModel.find();
+        const medical = await medicalSpecialtiesModel.find();
         return res.status(200).json(medical)
     } catch (error) {
          return res.status(500).json({message: "Intenal sever error"})

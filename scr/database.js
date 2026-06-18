@@ -14,5 +14,5 @@ connection.on("disconnected", ()=>{
 })
 
 connection.on("error", ()=>{
-    console.log("error found" + error)
+    console.log("error found")
 })
