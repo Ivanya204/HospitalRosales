@@ -97,3 +97,5 @@ medicalEquipmentController.deleteMedicalEquipment = async(req, res)=>{
         return res.status(500).json({message: "Intenal sever error"})
     }
 }
+
+export default medicalEquipmentController
