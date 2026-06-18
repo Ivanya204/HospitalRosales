@@ -6,8 +6,6 @@ import bcrypt from "bcryptjs"
 import patientsModel from "../model/patients.js"
 
 import { config } from "../config.js"
-import { text } from "stream/consumers"
-import { info } from "console"
 
 const registerPatient = {}
 
@@ -15,8 +13,8 @@ registerPatient.register = async (req, res)=>{
     const {name, lastName, email, password, phone, address, phoneEmergencyContacts, isVerified, loginAttempts, timeOut} = req.body
     try {
         const existPatient = await patientsModel.findOne({email})
-        if(!existPatient){
-            return res.status(400).json({message: "No coincide o no existe, linea 17"})
+        if(existPatient){
+            return res.status(400).json({message: "El usuario ya existe"})
         }
 
         const passwordHash = await bcrypt.hash(password, 10)

@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { config } from "./config.js";
 
-mongoose.connect(config.db.URI)
+mongoose.connect("mongodb://localhost:27017/HospitalRosales1A")
 
 const connection = mongoose.connection
 
